@@ -1,23 +1,105 @@
-#AI/ML Intern Assignment
+# Trigram Language Model (Assessment 1)
 
-Welcome to the AI/ML Intern assignment! This project is designed to test your core Python skills and your ability to design and build a clean and efficient system from scratch.
+This folder contains the implementation for **Task 1** of the AI/ML Intern assessment:  
+building a **Trigram (N=3) Language Model** from scratch using Python.
 
-## Quick Start
+The implementation includes text cleaning, tokenization, unknown-word handling, vocabulary building, trigram counting, and probabilistic text generation.
 
-1. Clone or fork this repository.
-2. Install the required dependencies: `pip install -r requirements.txt`
-3. Open the trigram-assignment/src/ngram_model.py file and implement the TrigramModel class.
-4. Run the tests to check your implementation: `pytest trigram-assignment/tests/test_ngram.py`
+---
 
+##  Project Structure
 
-## Instructions
+```
+ml-assignment/
+│
+├── data/
+│   └── example_corpus.txt        # Training corpus
+│
+├── src/
+│   ├── ngram_model.py            # Trigram model implementation
+│   ├── generate.py               # Script to train + generate text
+│   └── utils.py                  # (Provided in starter repo)
+│
+├── tests/
+│   └── test_ngram.py             # Provided test cases
+│
+└── evaluation.md                 # Design explanation
+```
 
-1. Any changes to env should be updated in `requirements.txt`.
-2. Mention the steps to run your code in `trigram-assignment/README.md`.
-3. Feel free to make any changes to the existing code.
-4. Please document your design choices in the `evaluation.md` file. This should be a 1-page summary of the decisions you made and why you made them. And all the steps to for us to test.
-5. Please mind the second task is optional.
+---
 
+## 🔧 Installation
 
+```bash
+pip install -r requirements.txt
+```
 
-For more detailed instructions, please refer to the `ASSIGNMENT.md` file.
+---
+
+##  Running the Trigram Model
+
+Run commands from inside:
+
+```
+ml-intern-assessment-Shashank-kasamshetty-/ml-assignment
+```
+
+---
+
+### **1. Ensure the training corpus exists**
+
+The model reads the file:
+
+```
+data/example_corpus.txt
+```
+
+Replace this file if you want to train on another Project Gutenberg book.
+
+---
+
+### **2. Train the model & generate text**
+
+```bash
+python src/generate.py
+```
+
+This will:
+
+- Load `example_corpus.txt`
+- Clean & tokenize text
+- Build trigram counts
+- Generate a sample sentence
+
+**Example output:**
+
+```
+Generated Text:
+the rabbit looked quite surprised when alice walked into the garden
+```
+
+---
+
+## Running Tests
+
+Tests are located in:
+
+```
+tests/test_ngram.py
+```
+
+Run them using:
+
+```bash
+python -m pytest
+```
+
+All tests must pass:
+
+- fit() + generate()
+- empty text handling
+- short text handling
+
+---
+
+This README describes **Assessment 1 only**.
